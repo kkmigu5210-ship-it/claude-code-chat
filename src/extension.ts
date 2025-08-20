@@ -532,7 +532,7 @@ class ClaudeChatProvider {
 		} else {
 			// Use native claude command
 			console.log('Using native Claude command');
-			claudeProcess = cp.spawn('claude', args, {
+			claudeProcess = cp.spawn('ccr code', args, {
 				shell: process.platform === 'win32',
 				cwd: cwd,
 				stdio: ['pipe', 'pipe', 'pipe'],
@@ -2249,7 +2249,7 @@ class ClaudeChatProvider {
 		if (wslEnabled) {
 			terminal.sendText(`wsl -d ${wslDistro} ${nodePath} --no-warnings --enable-source-maps ${claudePath} ${args.join(' ')}`);
 		} else {
-			terminal.sendText(`claude ${args.join(' ')}`);
+			terminal.sendText(`ccr code ${args.join(' ')}`);
 		}
 		terminal.show();
 
@@ -2286,7 +2286,7 @@ class ClaudeChatProvider {
 		if (wslEnabled) {
 			terminal.sendText(`wsl -d ${wslDistro} ${nodePath} --no-warnings --enable-source-maps ${claudePath} ${args.join(' ')}`);
 		} else {
-			terminal.sendText(`claude ${args.join(' ')}`);
+			terminal.sendText(`ccr code ${args.join(' ')}`);
 		}
 		terminal.show();
 
